@@ -255,7 +255,8 @@
         /* --- Right Panel (Preview) --- */
         .preview-panel {
             flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 20px;
-            background: #111; overflow: hidden; /* Prevent scrollbar on panel from image resize logic */
+            background: #111; 
+            overflow-y: auto; /* FIXED: Changed from hidden to auto to allow scrolling on small screens */
         }
 
         .visual-preview-container {
@@ -327,13 +328,12 @@
     <div class="brand">
         <span>CINEMA</span> PROMPT BUILDER
     </div>
-    <div class="version">v3.12 (Added Styles)</div>
+    <div class="version">v3.13 (Overflow Fix)</div>
 </header>
 
 <div class="app-container">
     <aside class="sidebar" id="sidebar">
         
-        <!-- Mode Switcher -->
         <div class="label">Formatting Mode</div>
         <div class="mode-selector">
             <button class="mode-btn active" onclick="setMode('midjourney')">Midjourney</button>
